@@ -606,19 +606,12 @@ body {
   &__timer {
     font-size: 1.25rem;
     align-self: flex-end;
-    box-shadow: 0px 1px 0px 0px rgba(108, 138, 110, 0.7), 0px -1px 0px 0px rgba(188, 94, 179, 0.7), 
-                -1px -1px 0px 0px rgba(188, 94, 179, 0.7), 1px 1px 0px 0px rgba(108, 138, 110, 0.7);
-    border-radius: $b-radius;
     margin: 0 0.9em 0;
     position: relative;
     z-index: 4;
   }
   // .main-auction__timer-numbers
   &__timer-numbers {
-    display: inline-block;
-    background: $gradient_3;
-    backdrop-filter: blur(5px);
-    border-radius: $b-radius;
     padding: 0.25em 2em;
     position: relative;
   }
@@ -699,6 +692,19 @@ body {
     }
   }
 }
+.timer {
+  box-shadow: 0px 1px 0px 0px rgba(108, 138, 110, 0.7), 0px -1px 0px 0px rgba(188, 94, 179, 0.7), 
+              -1px -1px 0px 0px rgba(188, 94, 179, 0.7), 1px 1px 0px 0px rgba(108, 138, 110, 0.7);
+  border-radius: $b-radius;
+  // .timer__numbers
+  &__numbers {
+    display: inline-block;
+    background: $gradient_3;
+    backdrop-filter: blur(5px);
+    border-radius: $b-radius;
+  }
+}
+
 .item {
   @include flexCenter(column);
   align-items: flex-start;
@@ -728,10 +734,6 @@ body {
   @include flexCenter(row);
   flex-wrap: wrap;
   gap: 0.5em;
-  @media screen and (max-width: 450px) {
-    // flex-direction: column;
-    // gap: 0.5em 0.2em; 
-  }
   // .price__img
   &__img {
     padding: 1px;
@@ -762,7 +764,7 @@ body {
   }
   // .price__numbers
   &__numbers {
-    display: inline-block;
+    display: block;
     text-align: center;
   }
 }
@@ -858,11 +860,20 @@ body {
   padding: 185px 0 57px;
   position: relative;
   z-index: 2;
+  @media screen and (max-width: 1300px){
+    padding: 130px 0 57px;
+  }
+  @media screen and (max-width: 1300px){
+    padding: 90px 0 57px;
+  }
   // .auctions__title
   &__title {
     margin: 0 0 4.7rem;
     @media screen and (max-width: 1300px) {
-      margin: 0 0 3.6rem;;
+      margin: 0 0 3rem;
+    }
+    @media screen and (max-width: 1300px){
+      margin: 0 0 2rem;;
     }
   }
   // .auctions__list
@@ -891,11 +902,6 @@ body {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.05em;
-}
-
-.abra {
-  border-radius: $b-radius;
-  overflow: hidden;
 }
 .auction {
   position: relative;
@@ -1075,10 +1081,234 @@ body {
   }
 }
 
+
+// Block treasures 
+
 .treasures {
   background: url(../img/treasures_bg.jpg) center/100% 100% no-repeat #000;
-  padding: 0 0 700px;
+  padding: 100px 0 120px;
+  // .treasures__title
+  &__title {
+    margin: 0 0 20px;
+  }
+  // .treasures__text
+  &__text {
+    max-width: 725px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.7;
+    margin: 0 auto 70px;
+  }
+  // .treasures__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 17px;
+    margin: 0 0 80px;
+    @media screen and (max-width: 539px) {
+      max-width: 350px;
+      margin: 0 auto 80px;
+    }
+  }
+  // .treasures__button
+  &__button {
+    margin: 0 auto;
+  }
 }
+.container {
+}
+.title {
+}
+.treasure {
+  display: flex;
+  flex: 0 1 calc((100% - 68px) / 5);
+  background: linear-gradient(135deg, rgba(224,37,206,0.7) 0%, rgba(#fff, 0) 40%, rgba(189,36,230,0.7) 115%);
+  border-radius: $b-radius;
+  padding: 2.5px;
+  @media screen and (max-width: 1349px) {
+    flex: 0 1 calc((100% - 51px) / 4);
+  }
+  @media screen and (max-width: 991px) {
+    flex: 0 1 calc((100% - 34px) / 3);
+  }
+  @media screen and (max-width: 767px) {
+    flex: 0 1 calc((100% - 17px) / 2);
+  }
+  @media screen and (max-width: 539px) {
+    flex: 0 1 100%;
+  }
+  // .treasure__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 7px;
+    background: #1e0e43;
+    border-radius: $b-radius;
+    padding: 15px;
+    position: relative;
+    &::before {
+      @include pseudo-el(0, 0);
+      width: 100%;
+      height: 100%;
+      background: $gradient_3;
+      border-radius: $b-radius;
+      z-index: 1;
+    }
+  }
+  // .treasure__caption
+  &__caption {
+    position: relative;
+    z-index: 2;
+  }
+  // .treasure__image-wrapper
+  &__image-wrapper {
+    @include flexCenter(row);
+  }
+  // .treasure__image
+  &__image {
+    position: relative;
+    z-index: 2;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  // .treasure__link
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+  // .treasure__timer
+  &__timer {
+    font-size: 0.875rem;
+    text-align: center;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+  // .treasure__timer-numbers
+  &__timer-numbers {
+    padding: 4px 8px;
+  }
+  // .treasure__info
+  &__info {
+    position: relative;
+    z-index: 2;
+  }
+  // .treasure__item-name
+  &__item-name {
+    margin: 0 0 8px;
+  }
+  // .treasure__item-seller
+  &__item-seller {
+    display: block;
+    font-weight: 400;
+    font-size: 0.875rem;
+    opacity: 0.7;
+    margin: 3px 0 0;
+  }
+  // .treasure__block
+  &__block {
+    @include flexSpace(row);
+    gap: 10px;
+  }
+  // .treasure__cost
+  &__cost {
+  }
+  // .treasure__icon
+  &__icon {
+  }
+  // .treasure__icon-link
+  &__icon-link {
+  }
+  // .treasure__button
+  &__button {
+    font-size: 1rem;
+  }
+}
+.caption {
+  font-weight: 600;
+  font-size: 0.875rem;
+  @include flexSpace(row);
+  // .caption__block
+  &__block{
+    @include flexCenter(row);
+    gap: 10px 8px;
+  }
+  // .caption__img
+  &__img {
+  }
+  // .caption__img-link
+  &__img-link {
+  }
+  // .caption__name
+  &__name {
+  }
+  // .caption__like
+  &__like {
+  }
+}
+.timer {
+  // .timer__numbers
+  &__numbers {
+  }
+}
+.item {
+  // .item__name
+  &__name {
+  }
+  // .item__seller
+  &__seller {
+  }
+}
+.cost {
+  @include flexCenter(row);
+  gap: 6px;
+  // .cost__icon
+  &__icon {
+    position: relative;
+    &::before {
+      @include pseudo-el(0, 0);
+      background: url(../svg/treasure-cost-icon.svg) center/100% 100% no-repeat;
+      width: 17px;
+      height: 28px;
+      filter: blur(5px); 
+      z-index: 1;
+    }
+  }
+  // .cost__icon-link
+  &__icon-link {
+    position: relative;
+    z-index: 2;
+  }
+  // .cost__info
+  &__info {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(#fff, 0.7);
+  }
+  // .cost__numbers
+  &__numbers {
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(#fff, 1);
+  }
+}
+.button-bid {
+}
+.pink-button {
+  // .pink-button__text
+  &__text {
+  }
+}
+
 
 
 
