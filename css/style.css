@@ -1613,7 +1613,7 @@ body.lock {
 
 .creators {
   background: url(../img/creators_bg.jpg) center/100% 100% no-repeat #000;
-  padding: 120px 0;
+  padding: 120px 0 230px;
 }
 .creators__title {
   margin: 0 0 70px;
@@ -1642,9 +1642,15 @@ body.lock {
   border-radius: 10px;
   z-index: 1;
 }
+@media screen and (max-width: 991px) {
+  .creator-card {
+    width: 280px;
+    height: 415px;
+  }
+}
 .creator-card__body {
   flex-grow: 1;
-  padding: 10px 12px 20px;
+  padding: 10px 10px 20px;
   position: relative;
   z-index: 2;
 }
@@ -1673,11 +1679,22 @@ body.lock {
   max-width: 100%;
 }
 .creator-card__photo {
+  width: 64px;
+  height: 64px;
   content: "";
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 991px) {
+  .creator-card__photo {
+    width: 56px;
+    height: 56px;
+  }
+}
+.creator-card__photo-link {
+  max-width: 100%;
 }
 .creator-card__info {
   display: flex;
@@ -1797,6 +1814,10 @@ body.lock {
   background: #332250;
 }
 
+.message-btn {
+  background: #433758;
+}
+
 .creator-card.swiper-slide-visible {
   opacity: 0.4;
 }
@@ -1824,8 +1845,4 @@ body.lock {
 }
 .creator-card.swiper-slide-active .creator-btn:hover .creator-btn__text {
   color: #000;
-}
-
-.message-btn {
-  background: #433758;
 }/*# sourceMappingURL=style.css.map */
