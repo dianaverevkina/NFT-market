@@ -27,13 +27,6 @@ if (document.documentElement.clientWidth < 1000) {
   window.addEventListener('scroll', fixHeader);
 }
 
-
-// slides.forEach(slide => {
-
-//   slide.dataset.swiperParallax = '-100';
-//   slide.dataset.swiperParallaxDuration = '60000';
-// })
-
 //Слайдер
 let swiper = new Swiper('.creators__slider', {
   // navigation: {
@@ -46,33 +39,29 @@ let swiper = new Swiper('.creators__slider', {
      onlyInViewport: true,
      pageUpDown: true,
   },
-  // watchSlidesProgress: true,
+
   speed: 700,
   centeredSlides: true,
   slidesPerView:'auto',
   grabCursor: true,
-  autoplay: false,
-  // slideToClickedSlide: true,
-  slideToClickedSlide: true,
   
-  // initialSlide: 3,
- 
+  // autoplay: {
+  //   delay: 500,
+  //   disableOnInteraction: true,	
+  // },
 
+  slideToClickedSlide: true,
   watchOverflow: false,
 
   loop: true,
 
   effect: 'coverflow',
-	
   coverflowEffect: {
       slideShadows: false,
 			depth: 170,
       stretch: 65,
       rotate: 0,
-      // modifier: 0.75,
 		},
- 
- 
 })
 
 let slides = document.querySelectorAll('.creator-card');
