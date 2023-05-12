@@ -27,6 +27,7 @@ if (document.documentElement.clientWidth < 1000) {
   window.addEventListener('scroll', fixHeader);
 }
 
+
 //Слайдер
 let swiper = new Swiper('.creators__slider', {
   // navigation: {
@@ -40,15 +41,17 @@ let swiper = new Swiper('.creators__slider', {
      pageUpDown: true,
   },
 
-  speed: 700,
+  speed: 1500,
   centeredSlides: true,
-  slidesPerView:'auto',
+  // slidesPerView: 4.2,
+  slidesPerView: 'auto',
   grabCursor: true,
   
-  // autoplay: {
-  //   delay: 500,
-  //   disableOnInteraction: true,	
-  // },
+  autoplay: {
+    delay: 800,
+    disableOnInteraction: true,	
+    // pauseOnMouseEnter: true,
+  },
 
   slideToClickedSlide: true,
   watchOverflow: false,
@@ -58,22 +61,75 @@ let swiper = new Swiper('.creators__slider', {
   effect: 'coverflow',
   coverflowEffect: {
       slideShadows: false,
-			depth: 170,
+			depth: 150,
+      modifier: 1,
       stretch: 65,
       rotate: 0,
 		},
 })
 
-let slides = document.querySelectorAll('.creator-card');
-slides.forEach(slide => {
-  if (slide.classList.contains('swiper-slide-active')){
-    let buttons = slide.querySelectorAll('.creator-btn');
-    buttons.forEach(button => {
-      button.classList.add('creator-btn_active');
-    })
+// let slides = document.querySelectorAll('.creator-card');
+// slides.forEach(slide => {
+//   if (slide.classList.contains('swiper-slide-active')){
+//     let buttons = slide.querySelectorAll('.creator-btn');
+//     buttons.forEach(button => {
+//       button.classList.add('creator-btn_active');
+//     })
     
-  }
+//   }
+// })
+
+const subscriptionForm = document.querySelector('.subscription__form');
+const subscriptionField = subscriptionForm.querySelector('.subscription__input-wrapper');
+const subscriptionText = subscriptionForm.querySelector('.subscription__input-text');
+const subscriptionInput = subscriptionForm.querySelector('.subscription__input');
+const subscriptionBtn = subscriptionForm.querySelector('.subscription__button');
+
+function changeInput() {
+  subscriptionText.classList.add('subscription__input-text_hidden');
+  subscriptionInput.classList.add('subscription__input_visible');
+  subscriptionInput.focus();
+}
+
+function submitEmail (e) {
+  e.preventDefault();
+  subscriptionInput.classList.remove('subscription__input_visible');
+  subscriptionText.classList.remove('subscription__input-text_hidden');
+}
+
+subscriptionText.addEventListener('click', changeInput);
+subscriptionForm.addEventListener('submit', submitEmail);
+
+
+let companionsSliderUpper = new Swiper('.slider-companions_upper', {
+  autoplay: {
+    delay: 0,
+		disableOnInteraction: false, 
+		reverseDirection: true,
+    waitForTransition: false, 
+  },
+  loop: true,
+	spaceBetween: 18,
+  slidesPerView: 'auto',
+  speed: 4000,
+  // waitForTransition: false,
+});
+
+let companionsSliderLower = new Swiper('.slider-companions_lower', {
+  autoplay: {
+    delay: 0, 
+		disableOnInteraction: false,
+  },
+  loop: true, 
+	spaceBetween: 10,
+  slidesPerView: 'auto',
+  speed: 4000, 
+  allowTouchMove: false, 
+  waitForTransition: false,
 })
+
+
+
 
 
 
