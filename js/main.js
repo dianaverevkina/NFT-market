@@ -3,7 +3,6 @@ const bodyElement = document.querySelector('body');
 const icon = headerElement.querySelector('.icon');
 const menuItems = headerElement.querySelector('.menu__items');
 
-
 //Открыть/закрыть бургер-меню
 function clickMenuBurger() {
   this.classList.toggle('icon_active');
@@ -36,12 +35,6 @@ if (document.documentElement.clientWidth < 768) {
 
 //Слайдер для блока Creators
 let swiper = new Swiper('.creators__slider', {
-  keybord: {
-     enabled: true,
-     onlyInViewport: true,
-     pageUpDown: true,
-  },
-
   speed: 1500,
   centeredSlides: true,
   slidesPerView: 'auto',
