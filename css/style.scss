@@ -3,8 +3,6 @@
 
 //gradient for auction-card
 $gradient_1: linear-gradient(135deg, rgba(189,36,230,0.7) 0%, rgba(74,237,82,0.7) 40%, rgba(224,37,206,0.7) 115%);
-//for timer
-$gradient_2: linear-gradient(170deg, rgba(224,37,206,1) 30%, rgba(74,237,82,1) 68%);
 //grey gradient
 $gradient_3: linear-gradient(138.84deg, rgba(255, 255, 255, 0.134) -6.39%, rgba(255, 255, 255, 0.042) 112.17%);
 // for price-icon and main title 
@@ -83,7 +81,7 @@ body {
   z-index: 30;
   font-size: 1.25rem;
   @media screen and (max-width: 1000px) {
-    padding: 20px 0 0;
+    padding: 7px 0 0;
     &_fixed {
     position: fixed;
     height: 60px;
@@ -150,7 +148,6 @@ body {
       height: 100%;
       background: rgba(#4AED52, 1);
       border-radius: $b-radius;
-      // filter: blur(7px);
     }
     &:hover:before{
       background: #f3d8f0;
@@ -202,8 +199,8 @@ body {
     gap: 15px 60px;
     @media screen and (max-width: 1000px) {
       font-size: 1.5rem;
-      position: absolute;
-      top: 75px;
+      position: fixed;
+      top: 60px;
       right: -100%;
       @include flexCenter(column);
       padding: 25px 15px;
@@ -212,13 +209,10 @@ body {
       height: 240px;
       overflow: auto;
       transition: all 0.6s linear;
-      &_fixed {
-        top: 60px;
-      }
     }
     &_active{
       right: 0;
-      transition: all 0.9s linear;
+      transition: all 0.7s linear;
     }
   }
   // .menu__item
@@ -243,6 +237,7 @@ body {
   display: none;
   width: 35px;
   height: 22px;
+  cursor: pointer;
 
   position: relative;
   z-index: 70;
@@ -292,9 +287,6 @@ body {
     transition: all 0.3s ease;
     z-index: 50;
     transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1) 0s;
-  }
-  // .icon__bottom
-  &__bottom {
   }
 }
 
@@ -508,12 +500,6 @@ body {
       font-size: 1.5rem;
     }
   }
-  // .about-NFT__auction
-  &__auction {
-  }
-  // .about-NFT__companies
-  &__companies {
-  }
 }
 
 .pink-button{
@@ -552,8 +538,6 @@ body {
       font-size: 1rem;
     }
   }
-}
-.caption {
 }
 .main-auction {
   flex: 0 1 39.5%;
@@ -609,11 +593,9 @@ body {
     @media screen and (max-width: 1199px) {
       gap: 15.7em 0.8em;
     }
-
     @media screen and (max-width: 449px) {
       gap: 13.5em 0.8em;
     }
-    
   }
   // .main-auction__timer
   &__timer {
@@ -678,9 +660,6 @@ body {
       padding: 0.4em 0.6em;
     }
   }
-  // .main-auction__item
-  &__item {
-  }
 	// .main-auction__price-img
 	&__price-img {
     width: 2.1em;
@@ -735,9 +714,6 @@ body {
     font-size: 1rem;
     padding: 4px 0 0;
     opacity: 0.7;
-  }
-  // .item__price
-  &__price {
   }
 }
 
@@ -1042,21 +1018,11 @@ body {
       width: 100px;
     }
   }
-  // .auction__timer-numbers
-  &__timer-numbers {
-    
-  }
-  // .auction__price
-  &__price {
-  }
 	// .auction__price-img
 	&__price-img {
     width: 1.7em;
     height: 1.7em;
 	}
-  // .auction__button
-  &__button {
-  }
 }
 .item {
   // .item__seller
@@ -1065,20 +1031,6 @@ body {
       font-size: 0.75rem;
       text-transform: uppercase;
     }
-  }
-}
-.price {
-  // .price__img
-  &__img {
-  }
-  // .price__img-wrapper
-  &__img-wrapper {
-  }
-  // .price__icon
-  &__icon {
-  }
-  // .price__numbers
-  &__numbers {
   }
 }
 .button-bid {
@@ -1098,7 +1050,6 @@ body {
     width: 105px;
   }
 }
-
 
 // Block treasures 
 
@@ -1238,15 +1189,6 @@ body {
     @include flexSpace(row);
     gap: 10px;
   }
-  // .treasure__cost
-  &__cost {
-  }
-  // .treasure__icon
-  &__icon {
-  }
-  // .treasure__icon-link
-  &__icon-link {
-  }
   // .treasure__button
   &__button {
     font-size: 1rem;
@@ -1260,28 +1202,6 @@ body {
   &__block{
     @include flexCenter(row);
     gap: 10px 8px;
-  }
-  // .caption__img
-  &__img {
-  }
-  // .caption__img-link
-  &__img-link {
-  }
-  // .caption__name
-  &__name {
-  }
-  // .caption__like
-  &__like {
-  }
-}
-.timer {
-  // .timer__numbers
-  &__numbers {
-  }
-}
-.item {
-  // .item__seller
-  &__seller {
   }
 }
 .cost {
@@ -1373,9 +1293,6 @@ body {
       max-width: 600px;
       margin: 0 auto;
     }
-  }
-  // .become-creator__step
-  &__step {
   }
 }
 
@@ -1487,10 +1404,6 @@ body {
       margin: 0 0 50px;
     }
   }
-  // .creators__slider
-  &__slider {
-
-  }
 }
 .creator-card {
   max-width: 320px;
@@ -1548,8 +1461,6 @@ body {
     position: absolute;
     inset: 100% 0;
     margin: auto;
-    // @include pseudo-el(100%, 50%);
-    // transform: translate(-51%, -50%);
     @media screen and (max-width: 991px) {
       width: 56px;
       height: 56px;
@@ -1593,9 +1504,6 @@ body {
   &__buttons {
     @include flexCenter(row);
     gap: 20px;
-  }
-  // .creator-card__btn
-  &__btn {
   }
   // .creator-card__stats
   &__stats {
@@ -1917,25 +1825,13 @@ body {
     gap: 8px;
     z-index: 5;
   }
-  // .artworks__artwork
-  &__artwork {
-  }
   // .artworks__artwork-pic
   &__artwork-pic {
     max-width: 100%;
   }
-  // .artworks__cover
-  &__cover {
-    
-  }
   // .artworks__cover-pic
   &__cover-pic {
     max-width: 100%;
-  }
-}
-.pink-button {
-  // .pink-button__text
-  &__text {
   }
 }
 
@@ -2135,9 +2031,6 @@ body {
         margin: 0 0 50px;
       }
 		}
-		// .companions__slider
-		&__slider {
-		}
 }
 .slider-companions {
 		// .slider-companions_upper
@@ -2147,9 +2040,6 @@ body {
 		// .slider-companions__wrapper
 		&__wrapper {
       transition-timing-function: linear;
-		}
-		// .slider-companions__item
-		&__item {
 		}
 }
 .companion {
@@ -2302,9 +2192,6 @@ body {
       }
     }
   }
-  // .footer__block
-  &__block {
-  }
   // .footer__about-NFT
   &__about-NFT {
     max-width: 420px; 
@@ -2323,12 +2210,6 @@ body {
     @media screen and (max-width: 991px) {
       display: none;
     }
-  }
-  // .footer__socials
-  &__socials {
-  }
-  // .footer__rights
-  &__rights {
   }
   // .footer__service
   &__service {
@@ -2418,9 +2299,6 @@ body {
       flex-direction: column;
       gap: 10px;
     }
-  }
-  // .footer-menu__item
-  &__item {
   }
   // .footer-menu__title
   &__title {
