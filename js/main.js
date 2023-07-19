@@ -13,7 +13,7 @@ icon.addEventListener('click', clickMenuBurger);
 
 //Фиксирование header и смена background 
 function fixHeader() {
-  if (this.scrollY > 30) {
+  if (this.scrollY > 0) {
     headerElement.classList.add('header_fixed');
     menuItems.classList.add('menu__items_fixed');
   } else {
