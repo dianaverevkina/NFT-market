@@ -3,6 +3,7 @@ const bodyElement = document.querySelector('body');
 const icon = headerElement.querySelector('.icon');
 const menuItems = headerElement.querySelector('.menu__items');
 
+
 //Открыть/закрыть бургер-меню
 function clickMenuBurger() {
   this.classList.toggle('icon_active');
@@ -13,12 +14,10 @@ icon.addEventListener('click', clickMenuBurger);
 
 //Фиксирование header и смена background 
 function fixHeader() {
-  if (this.scrollY > 0) {
+  if (this.scrollY > 7) {
     headerElement.classList.add('header_fixed');
-    menuItems.classList.add('menu__items_fixed');
   } else {
     headerElement.classList.remove('header_fixed');
-    menuItems.classList.remove('menu__items_fixed');
   }
 }
 
@@ -80,6 +79,7 @@ function changeInput() {
 //Отправка мейла для подписки
 function submitEmail (e) {
   e.preventDefault();
+  subscriptionForm.clear();
   subscriptionInput.classList.remove('subscription__input_visible');
   subscriptionText.classList.remove('subscription__input-text_hidden');
 }
