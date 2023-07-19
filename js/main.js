@@ -72,7 +72,7 @@ function changeInput() {
 //Отправка мейла для подписки
 function submitEmail (e) {
   e.preventDefault();
-  subscriptionForm.clear();
+  subscriptionForm.reset();
   subscriptionInput.classList.remove('subscription__input_visible');
   subscriptionText.classList.remove('subscription__input-text_hidden');
 }
